@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>SHOW TRACKR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+    <style media="screen">
+
+      body{background-color:  #d6d6d6;}
+      input[type=text ],[type=password ], select {
+        width: 90%;
+        padding: 12px 20px;
+        /* margin: 8px 10px; */
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 5px ;
+      }
+      .panel{
+        margin:100px 400px;
+      }
+      .inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" style="background-color:yellow">Show<b>Trackr</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li ><a href="index.html">Home</a></li>
+
+          <li><a href="add.html">Add</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Signup</a></li>
+        </ul>
+        </nav>
+        <div class="container">
+
+      <div class="panel panel-default" >
+        <div class="panel-body" ><h1 style="text-align:center; "> <b>SignUp</b></h1></div>
+          <br>
+ <!-- <span><i class="glyphicon glyphicon-user"></i></span> -->
+ <div class="inner-addon left-addon">
+      <i class="glyphicon glyphicon-user"></i>
+      <input type="text" class="form-control" placeholder="Username" id="text" id="demo" onclick="myFunction" required
+        onclick="document.getElementById('useerr').innerHTML = 'Your User Name is Required';this.onclick=null;"
+        oninput="ValidateUser(username.value)"/>
+    <span style="color:red; margin-top:0px;font-size: 15px;margin-left:70px;float:left;" id="useerr"></span>
+    </div>
+          <!-- <input type="text" id="Name"  placeholder= " Name" > -->
+          <div class="inner-addon left-addon">
+              <i class="glyphicon glyphicon-envelope"></i>
+            <input type="text" class="form-control" placeholder="@email" required
+              onclick="document.getElementById('mailerr').innerHTML = 'Your e-mail address is Required.' ;this.onclick=null;"
+              oninput="ValidateEmail(email)"/>
+              <span style="color:red; margin-top:0px;font-size: 15px;margin-left:70px;float:left;" id="mailerr"></span>
+          <!--  onclick="ValidateEmail(document.form1.text1)" -->
+             </div>
+             <div class="inner-addon left-addon">
+                  <i class="glyphicon glyphicon-eye-close"></i>
+            <!--      <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span> -->
+                  <input type="password" class="form-control" placeholder="password"  required
+                    onclick="document.getElementById('passerr').innerHTML = 'Your Password is Required';this.onclick=null;"
+                    oninput="Validatepw(password.value)"/>
+                      <span style="color:red; margin-top:0px;font-size: 15px;margin-left:70px;float:left;" id="passerr"></span>
+                </div>
+
+
+        <p style="text-align:center">By clicking on Sign up,you agree to <b>terms & condition</b> and <b>Privacy policy</b> </p>
+        <br>
+        <br>
+<!--  <a href="#" style="margin: 10px 100px" class="btn btn-info" role="button">singup</a> -->
+  <button type="button" class="btn btn-primary btn-block" style="margin:1px" onclick="store(username.value,email.value,password.value)" >Sing up</button>
+       <br>
+       <br>
+       <p style="text-align:center"><b>Already on Linkein?</b> <a href="login.html">Login in now </a></p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    function ValidateEmail(inputText)
+      {
+        var mailformat = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(inputText.value.match(mailformat))
+        {
+          document.getElementById('mailerr').innerHTML =" ";
+        }
+        else
+        {
+          document.getElementById('mailerr').innerHTML ="Your email address Invalid";
+        }
+      }
+      function ValidateUser(Tex){
+        var usenum= Tex.length;
+        if(usenum<5){
+          document.getElementById('useerr').innerHTML ="Your User Name Invalid";
+        }
+        else if(usenum){
+          document.getElementById('useerr').innerHTML =" ";
+        }
+      }
+      function Validatepw(Texp){
+        if (Texp.match(/[a-z]/g) && Texp.match(
+                    /[A-Z]/g) && Texp.match(
+                    /[0-9]/g) && Texp.match(
+                    /[^a-zA-Z\d]/g) && Texp.length >= 8) {
+                document.getElementById('passerr').innerHTML =" ";
+              }
+        else {
+          document.getElementById('passerr').innerHTML ="Your Password is Invalid ";
+        }
+      }
+      function store(useername,email,password){
+        var i=5;
+        user[i].user=useername;
+        user[i].mail=email;
+        user[i].pw=password;
+        alert("User created");
+        i++;
+      }
+
+
+
+
+
+
+
+
+
+
+
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>SHOW TRACKR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style media="screen">
+      body{background-color:  #d6d6d6 }
+    </style>
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" style="background-color:yellow">Show<b>Trackr</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li ><a href="index.html">Home</a></li>
+
+          <li class="active"><a href="add.html">Add</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+          <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        </ul>
+        </nav>
+        <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">ADD TV SHOW</div>
+            <input type="text" id="fname" style="width:80%" placeholder="Enter Tv Show">
+            <br><br>
+            <a  class="btn btn-info" role="button" onclick="add(enter.value)"  id="entere">Add</a>
+
+
+          </div>
+        </div>
+
+        <script>
+
+        function add(movie){
+          var x = /[A-z a-z]/;
+          if(movie[0].match(x)){
+            document.getElementById('entere').innerHTML = movie + " has been added";
+            document.getElementById('entere').style.color = 'green';
+          }
+          else {
+            document.getElementById('entere').innerHTML = "Invalid TV Show Name";
+            document.getElementById('entere').style.color = 'red';
+          }
+
+        }
+        <!-- // function showname(value)
+        //       {
+        //       var letters = /^[A-Za-z]+$/;
+        //       if(value[0].match(letters))
+        //       {
+        //       alert('Your name have accepted : you can try another');
+        //       return true;
+        //       }
+        //       else
+        //       {
+        //       alert('Please input alphabet characters only');
+        //       return false;
+        //       }
+        //       } -->
+
+
+        </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>SHOW TRACKR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style media="screen">
+
+      body{background-color:  #d6d6d6;}
+      input[type=text], select {
+        width: 90%;
+        padding: 12px 20px;
+       /*margin: 8px 0;*/
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 5px;
+      }
+      .panel{
+        margin:100px 400px;
+      }
+   .inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" style="background-color:yellow">Show<b>Trackr</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="add.html">Add</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Singn up</a></li>
+        </ul>
+        </nav>
+        <div class="container">
+
+      <div class="panel panel-default" >
+        <div class="panel-body"> <h1 style=text-align:center><b>Log in</b></h1></div>
+          <br>
+          <div class="inner-addon left-addon">
+               <i class="glyphicon glyphicon-envelope"></i>
+               <input type="text" class="form-control" placeholder="Email" />
+             </div>
+        <!--<input type="text" id="Email" placeholder="@ Email"> -->
+        <br>
+        <div class="inner-addon left-addon">
+             <i class="glyphicon glyphicon-eye-close"></i>
+       <!--      <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span> -->
+             <input type="password" class="form-control" placeholder="password" />
+           </div>
+      <!--  <input type="text" id="password" placeholder="password"> -->
+        <br>
+  <!--<a href="#"style="margin:10px 40%"  class="btn btn-info" role="button">Login</a> -->
+  <button type="button" class="btn btn-success" style="width:100%" onclick=""> Login</button>
+       <br>
+       <br>
+       <p style="text-align:center"><b>Forgot yourpassword </b></p>
+       <p style="text-align:center">Don't have an account yet?  <a href="signup.html">Sign up </a> </p>
+       <br>
+       <p style="text-align:center"> <b>or</b></p>
+       <button type="button" class="btn btn-primary btn-block" style="margin:1px"> f Sign in with Facebook</button>
+       <br>
+       <button type="button" class="btn btn-danger" style="width:100%"> g+ Sign in with Google</button>
+      </div>
+    </div>
+
+<script type="text/javascript">
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+}
+</script>
+  </body>
+</html>
